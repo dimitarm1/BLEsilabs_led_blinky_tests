@@ -150,17 +150,17 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
     // This event indicates that a new connection was opened.
     case sl_bt_evt_connection_opened_id:
       last_bonding = evt->data.evt_connection_opened.bonding;
-      app_log_info("Connection opened. Bonding handle: %x\n", last_bonding);
+      app_log_info("Connection opened. Bonding handle: 0x%02X\n", last_bonding);
       break;
       // -------------------------------
           // This event indicates that a new connection was opened.
     case sl_bt_evt_system_error_id:
-      app_log_info("System error: %x\n", evt->data.evt_system_error.reason);
+      app_log_info("System error: 0x%04X\n", evt->data.evt_system_error.reason);
       break;
     // -------------------------------
     // This event indicates that a connection was closed.
     case sl_bt_evt_connection_closed_id:
-      app_log_info("Connection closed.Reason: %x\n",evt->data.evt_connection_closed.reason );
+      app_log_info("Connection closed.Reason: 0x%04X\n",evt->data.evt_connection_closed.reason );
 
       // Generate data for advertising
       sc = sl_bt_legacy_advertiser_generate_data(advertising_set_handle,
@@ -205,8 +205,8 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
               last_bonding = 0xFF;
             }
             sc = sl_bt_sm_increase_security(connectionHandle);
-            app_log_info("Result... = 0x%04X\r\n", sc);
-            app_assert_status(sc);
+            app_log_info("Inrease security - Result... = 0x%04X\r\n", sc);
+//            app_assert_status(sc);
           }
         }
         break;
