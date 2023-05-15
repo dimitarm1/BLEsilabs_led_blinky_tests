@@ -42,12 +42,12 @@
 // <RAIL_PTI_MODE_SPI=> SPI
 // <RAIL_PTI_MODE_DISABLED=> Disabled
 // <i> Default: RAIL_PTI_MODE_UART
-#define SL_RAIL_UTIL_PTI_MODE           RAIL_PTI_MODE_DISABLED
+#define SL_RAIL_UTIL_PTI_MODE           RAIL_PTI_MODE_UART
 
 // <o SL_RAIL_UTIL_PTI_BAUD_RATE_HZ> PTI Baud Rate (Hertz)
 // <147800-20000000:1>
 // <i> Default: 1600000
-#define SL_RAIL_UTIL_PTI_BAUD_RATE_HZ   1600000
+#define SL_RAIL_UTIL_PTI_BAUD_RATE_HZ   3200000
 
 // </h>
 // <<< end of configuration section >>>
@@ -56,6 +56,14 @@
 // <pti signal=DOUT,(DFRAME),(DCLK)> SL_RAIL_UTIL_PTI
 // $[PTI_SL_RAIL_UTIL_PTI]
 #define SL_RAIL_UTIL_PTI_PERIPHERAL              PTI
+
+// PTI DOUT on PC00
+#define SL_RAIL_UTIL_PTI_DOUT_PORT               gpioPortC
+#define SL_RAIL_UTIL_PTI_DOUT_PIN                0
+
+// PTI DFRAME on PC03
+#define SL_RAIL_UTIL_PTI_DFRAME_PORT             gpioPortC
+#define SL_RAIL_UTIL_PTI_DFRAME_PIN              3
 
 // [PTI_SL_RAIL_UTIL_PTI]$
 

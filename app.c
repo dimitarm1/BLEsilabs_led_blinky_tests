@@ -108,6 +108,7 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
       // Configure pairing mode.
       sl_bt_sm_configure(0x00, sl_bt_sm_io_capability_noinputnooutput);
       sl_bt_sm_set_bondable_mode(1);
+      sl_bt_sm_set_debug_mode();
       sl_bt_sm_store_bonding_configuration(4,2);
       // Create an advertising set.
       sc = sl_bt_advertiser_create_set(&advertising_set_handle);

@@ -106,6 +106,14 @@
 // [EUART0]$
 
 // $[PTI]
+// PTI DFRAME on PC03
+#define PTI_DFRAME_PORT                          gpioPortC
+#define PTI_DFRAME_PIN                           3
+
+// PTI DOUT on PC00
+#define PTI_DOUT_PORT                            gpioPortC
+#define PTI_DOUT_PIN                             0
+
 // [PTI]$
 
 // $[MODEM]
